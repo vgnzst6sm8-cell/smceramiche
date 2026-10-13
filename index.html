@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SM Ceramiche - Lavabi e Arredo Bagno</title>
+  <style>
+    /* Reset & Variabili */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    :root {
+      --primary-color: #1a1a1a;
+      --accent-color: #3182ce;
+      --bg-light: #f8f9fa;
+      --text-dark: #2d3748;
+      --text-muted: #718096;
+    }
+
+    body {
+      color: var(--text-dark);
+      background-color: #ffffff;
+      line-height: 1.6;
+    }
+
+    /* Header e Navigazione */
+    header {
+      position: sticky;
+      top: 0;
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      z-index: 1000;
+    }
+
+    .top-bar {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 8px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+
+    .top-bar a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 5%;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
+    }
+
+    .action-btns {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-contact {
+      padding: 8px 16px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .btn-wa {
+      background-color: #25d366;
+      color: white;
+    }
+
+    .btn-ig {
+      background-color: #e1306c;
+      color: white;
+    }
+
+    /* Hero Banner */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 300;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      font-weight: 300;
+    }
+
+    .btn-main {
+      display: inline-block;
+      padding: 12px 30px;
+      background-color: #ffffff;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s;
+    }
+
+    .btn-main:hover {
+      background-color: var(--primary-color);
+      color: #ffffff;
+    }
+
+    /* Sezioni Generali */
+    section {
+      padding: 80px 5%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 50px;
+    }
+
+    /* Griglia Catalogo Prodotti */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      background: #ffffff;
+      border: 1px solid #edf2f7;
+      border-radius: 6px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .product-info h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .product-info p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    .product-info a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    }
+
+    /* Sezione Azienda */
+    .about-section {
+      background-color: var(--bg-light);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-text h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      padding: 60px 5% 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .footer-col p, .footer-col li {
+      font-size: 0.9rem;
+      color: #a0aec0;
+      margin-bottom: 10px;
+      list-style: none;
+    }
+
+    .footer-col a {
+      color: #a0aec0;
+      text-decoration: none;
+    }
+
+    .footer-col a:hover {
+      color: #ffffff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #2d3748;
+      padding-top: 20px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #a0aec0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div>📍 Sassari | 📞 Tel: 079398144</div>
+    <div>
+      <a href="#">IT</a> | <a href="#">EN</a>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">SM CERAMICHE</a>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#prodotti">Prodotti</a></li>
+          <li><a href="#collezioni">Collezioni</a></li>
+          <li><a href="#azienda">Azienda</a></li>
+          <li><a href="#contatti">Contatti</a></li>
+        </ul>
+      </nav>
+      <div class="action-btns">
+        <a href="https://wa.me/390761515275" target="_blank" class="btn-contact btn-wa">WhatsApp</a>
+        <a href="https://www.instagram.com/" target="_blank" class="btn-contact btn-ig">Instagram</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Eleganti e Funzionali</h1>
+      <p>Soluzioni in ceramica di alta qualità per l'ambiente bagno</p>
+      <a href="#prodotti" class="btn-main">Scopri i Prodotti</a>
+    </div>
+  </section>
+
+  <!-- Sezione Prodotti -->
+  <section id="prodotti">
+    <h2 class="section-title">I Nostri Prodotti</h2>
+    <p class="section-subtitle">Design, ricerca e tradizione della ceramica italiana</p>
+    
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="Lavabi da Appoggio">
+        <div class="product-info">
+          <h3>Lavabi da Appoggio</h3>
+          <p>Tondi, ovali, quadrati e rettangolari per ogni stile d'arredo.</p>
+          <a href="#">Vedi Dettagli &rarr;</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=600&q=80" alt="Lavabi da Incasso">
+        <div class="product-info">
+          <h3>Lavabi da Incasso</h3>
+          <p>Integrazione perfetta all'interno del piano bagno.</p>
+          <a href="#">Vedi Dettagli &rarr;</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=600&q=80" alt="Lavabi Sottopiano">
+        <div class="product-info">
+          <h3>Lavabi Sottopiano</h3>
+          <p>Superfici continue per una massima pulizia visiva.</p>
+          <a href="#">Vedi Dettagli &rarr;</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="Lavandi Multiuso">
+        <div class="product-info">
+          <h3>Multiuso & Lavanderia</h3>
+          <p>Soluzioni funzionali e assi per l'ambiente lavanderia.</p>
+          <a href="#">Vedi Dettagli &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezione Azienda -->
+  <section id="azienda" class="about-section">
+    <div class="about-text">
+  
+      <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" alt="Azienda Ceramica">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contatti">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>SM CERAMICHE</h4>
+        <p>Produzione di lavabi in ceramica d'alta qualità.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contatti</h4>
+        <p>📍 Via giovanni bruno, 30<br>07100 sassari ( SS )</p>
+        <p>📞 Tel: +079398144</p>
+        <p>✉️ Email: smceramichesrls@gmail.com </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Menu Rapido</h4>
+        <ul>
+          <li><a href="#prodotti">Prodotti</a></li>
+          <li><a href="#collezioni">Collezioni</a></li>
+          <li><a href="#azienda">Azienda</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; SM Ceramiche S.r.l. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
