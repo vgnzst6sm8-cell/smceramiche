@@ -5,6 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SM Ceramiche - Pavimenti e rivestimenti</title>
   <style>
+    /* Stile per lo Slider in movimento */
+  .hero-slider {
+    position: relative;
+    height: 80vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+
+  .hero-slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    z-index: 1;
+  }
+
+  .hero-slider .slide.active {
+    opacity: 1;
+  }
+
+  .hero-slider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 3;
+  }
     /* Reset & Variabili */
     * {
       margin: 0;
@@ -340,12 +385,16 @@
     </div>
   </header>
 
-  <!-- Hero Banner -->
-  <section id="home" class="hero">
+ <!-- Sezione Hero / Slider in Movimento -->
+  <section class="hero-slider">
+    <div class="slide active" style="background-image: url('bagno 1 slide.jpg')"></div>
+    <div class="slide" style="background-image: url('bagno 2 slide.jpg')"></div>
+    <div class="slide" style="background-image: url('bagno 3 slide.jpg')"></div>
+    
     <div class="hero-content">
       <h1>Eleganti e Funzionali</h1>
       <p>Soluzioni in ceramica di alta qualità per l'ambiente bagno</p>
-      <a href="#prodotti" class="btn-main">Scopri i Prodotti</a>
+      <a href="#prodotti" class="btn">SCOPRI I PRODOTTI</a>
     </div>
   </section>
     
@@ -438,6 +487,19 @@
       <p>&copy; SM Ceramiche S.r.l. Tutti i diritti riservati.</p>
     </div>
   </footer>
+  <script>
+  let slides = document.querySelectorAll('.hero-slider .slide');
+  let currentSlide = 0;
+
+  function nextSlide() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+
+  // Cambia immagine ogni 4 secondi
+  setInterval(nextSlide, 4000);
+</script>
 
 </body>
 </html>
