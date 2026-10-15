@@ -6,50 +6,51 @@
   <title>SM Ceramiche - Pavimenti e rivestimenti</title>
   <style>
     /* Stile per lo Slider in movimento */
-  .hero-slider {
-    position: relative;
-    height: 80vh;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-  }
+    .hero-slider {
+      position: relative;
+      height: 80vh;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
 
-  .hero-slider .slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-    z-index: 1;
-  }
+    .hero-slider .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+      z-index: 1;
+    }
 
-  .hero-slider .slide.active {
-    opacity: 1;
-  }
+    .hero-slider .slide.active {
+      opacity: 1;
+    }
 
-  .hero-slider::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 2;
-  }
+    .hero-slider::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 2;
+    }
 
-  .hero-content {
-    position: relative;
-    z-index: 3;
-  }
+    .hero-content {
+      position: relative;
+      z-index: 3;
+    }
+
     /* Reset & Variabili */
     * {
       margin: 0;
@@ -265,9 +266,57 @@
       text-transform: uppercase;
     }
 
+    /* Sezione Marchi */
+    .brands-section {
+      background-color: var(--bg-light);
+    }
+
+    .brands-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      align-items: center;
+    }
+
+    .brand-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 30px 20px;
+      text-align: center;
+      text-decoration: none;
+      color: var(--primary-color);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      border-color: var(--accent-color);
+    }
+
+    .brand-logo-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .brand-card span {
+      font-size: 0.8rem;
+      color: var(--accent-color);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
     /* Sezione Azienda */
     .about-section {
-      background-color: var(--bg-light);
+      background-color: #ffffff;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -374,19 +423,20 @@
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#prodotti">Prodotti</a></li>
-          <li><a href="#collezioni">Collezioni</a></li>
+          <li><a href="#marchi">I Nostri Marchi</a></li>
           <li><a href="#azienda">Azienda</a></li>
           <li><a href="#contatti">Contatti</a></li>
         </ul>
       </nav>
       <div class="action-btns">
         <a href="https://wa.me/393664760690" target="_blank" class="btn-contact btn-wa">WhatsApp</a>
-<a href="https://www.instagram.com/sm.ceramiche/" target="_blank" class="btn-contact btn-ig">Instagram</a>      </div>
+        <a href="https://www.instagram.com/sm.ceramiche/" target="_blank" class="btn-contact btn-ig">Instagram</a>
+      </div>
     </div>
   </header>
 
- <!-- Sezione Hero / Slider in Movimento -->
-  <section class="hero-slider">
+  <!-- Sezione Hero / Slider in Movimento -->
+  <section id="home" class="hero-slider">
     <div class="slide active" style="background-image: url('bagno 1 slide.jpg')"></div>
     <div class="slide" style="background-image: url('bagno 2 slide.jpg')"></div>
     <div class="slide" style="background-image: url('bagno 3 slide.jpg')"></div>
@@ -394,16 +444,17 @@
     <div class="hero-content">
       <h1>Eleganti e Funzionali</h1>
       <p>Soluzioni in ceramica di alta qualità per l'ambiente bagno</p>
-      <a href="#prodotti" class="btn">SCOPRI I PRODOTTI</a>
+      <a href="#prodotti" class="btn-main">SCOPRI I PRODOTTI</a>
     </div>
   </section>
-    
-<!-- Sezione Prodotti -->
+
+  <!-- Sezione Prodotti -->
   <section id="prodotti">
     <h2 class="section-title">I Nostri Prodotti</h2>
     <p class="section-subtitle">Design, ricerca e tradizione della ceramica italiana</p>
     
-    <div class="product-card">
+    <div class="product-grid">
+      <div class="product-card">
         <img src="bagno.jpg" alt="Arredo Bagno">
         <div class="product-info">
           <h3>Arredo bagno</h3>
@@ -441,7 +492,45 @@
     </div>
   </section>
 
-<!-- Sezione Azienda / Collezioni -->
+  <!-- Sezione I Nostri Marchi -->
+  <section id="marchi" class="brands-section">
+    <h2 class="section-title">I Nostri Marchi</h2>
+    <p class="section-subtitle">Partner d'eccellenza per la ceramica e l'arredamento</p>
+
+    <div class="brands-grid">
+      <a href="https://www.italgranitigroup.com" target="_blank" class="brand-card">
+        <div class="brand-logo-title">Italgraniti</div>
+        <span>Visita il sito ufficiale &rarr;</span>
+      </a>
+
+      <a href="https://www.panaria.it" target="_blank" class="brand-card">
+        <div class="brand-logo-title">Panaria</div>
+        <span>Visita il sito ufficiale &rarr;</span>
+      </a>
+
+      <a href="https://www.marcacorona.it" target="_blank" class="brand-card">
+        <div class="brand-logo-title">Marca Corona</div>
+        <span>Visita il sito ufficiale &rarr;</span>
+      </a>
+
+      <a href="https://www.fincibec.it" target="_blank" class="brand-card">
+        <div class="brand-logo-title">Fincibec</div>
+        <span>Visita il sito ufficiale &rarr;</span>
+      </a>
+
+      <a href="https://www.tuscania.it" target="_blank" class="brand-card">
+        <div class="brand-logo-title">Tuscania</div>
+        <span>Visita il sito ufficiale &rarr;</span>
+      </a>
+
+      <a href="https://www.naxos-ceramica.it" target="_blank" class="brand-card">
+        <div class="brand-logo-title">Naxos</div>
+        <span>Visita il sito ufficiale &rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Sezione Azienda -->
   <section id="azienda" class="about-section">
     <div class="about-text">
       <h2>Mobili e arredo bagno</h2>
@@ -470,13 +559,14 @@
         <h4>Contatti</h4>
         <p>📍 Via giovanni bruno, 30<br>07100 sassari ( SS )</p>
         <p>📞 Tel: +39 079398144</p>
-        <p>✉️ Email: smceramichesrls@gmail.com </p>
+        <p>✉️ Email: smceramichesrls@gmail.com</p>
       </div>
 
       <div class="footer-col">
         <h4>Menu Rapido</h4>
         <ul>
           <li><a href="#prodotti">Prodotti</a></li>
+          <li><a href="#marchi">I Nostri Marchi</a></li>
           <li><a href="#azienda">Azienda</a></li>
         </ul>
       </div>
@@ -486,19 +576,20 @@
       <p>&copy; SM Ceramiche S.r.l. Tutti i diritti riservati.</p>
     </div>
   </footer>
+
   <script>
-  let slides = document.querySelectorAll('.hero-slider .slide');
-  let currentSlide = 0;
+    let slides = document.querySelectorAll('.hero-slider .slide');
+    let currentSlide = 0;
 
-  function nextSlide() {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add('active');
-  }
+    function nextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
 
-  // Cambia immagine ogni 4 secondi
-  setInterval(nextSlide, 4000);
-</script>
+    // Cambia immagine ogni 4 secondi
+    setInterval(nextSlide, 4000);
+  </script>
 
 </body>
 </html>
