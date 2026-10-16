@@ -424,6 +424,7 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#prodotti">Prodotti</a></li>
           <li><a href="#marchi">I Nostri Marchi</a></li>
+          <li><a href="#prenota">Prenota Appuntamento</a></li>
           <li><a href="#azienda">Azienda</a></li>
           <li><a href="#contatti">Contatti</a></li>
         </ul>
@@ -444,7 +445,7 @@
     <div class="hero-content">
       <h1>Eleganti e Funzionali</h1>
       <p>Soluzioni in ceramica di alta qualità per l'ambiente bagno</p>
-      <a href="#prodotti" class="btn-main">SCOPRI I PRODOTTI</a>
+      <a href="#prenota" class="btn-main">PRENOTA UN APPUNTAMENTO</a>
     </div>
   </section>
 
@@ -492,9 +493,6 @@
     </div>
   </section>
 
- Ecco il blocco della sezione **"I Nostri Marchi"** aggiornato con tutti i nuovi marchi aggiunti (**Novellini, Inda, Paini, La Fabbrica, Edilkamin, Cordivari, GSI Sanitari**), completo di link ai rispettivi siti ufficiali:
-
-```html
   <!-- Sezione I Nostri Marchi -->
   <section id="marchi" class="brands-section">
     <h2 class="section-title">I Nostri Marchi</h2>
@@ -588,7 +586,50 @@
     </div>
   </section>
 
+  <!-- Sezione Prenota Appuntamento -->
+  <section id="prenota" style="padding: 80px 5%; background-color: #f8f9fa;">
+    <h2 class="section-title">PRENOTA UN APPUNTAMENTO</h2>
+    <p class="section-subtitle">Per <strong>prenotare un appuntamento</strong> in showroom, compila il modulo sottostante!</p>
 
+    <div style="background-color: #e6f4f8; border-radius: 8px; padding: 25px; margin-bottom: 40px; color: #2c5282;">
+      <strong>RICORDA DI SPECIFICARE NEL MESSAGGIO:</strong>
+      <ul style="margin: 15px 0 15px 20px;">
+        <li>Il <strong>giorno</strong> e l'<strong>orario</strong> che preferisci</li>
+        <li>I prodotti a cui sei interessato (arredo bagno, pavimenti, ecc.)</li>
+      </ul>
+      <p>Ti ricontatteremo al più presto per confermare la tua prenotazione!</p>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 40px;">
+      <div style="flex: 1; min-width: 280px; background-color: #ffffff; padding: 30px; border-radius: 8px; border: 1px solid #e2e8f0;">
+        <h3 style="margin-bottom: 15px;">SM CERAMICHE S.R.L.</h3>
+        <p>📍 Via Giovanni Bruno, 30<br>07100 Sassari (SS)</p><br>
+        <p>📞 <strong>Telefono:</strong> +39 079398144</p>
+        <p>💬 <strong>WhatsApp:</strong> +39 3664760690</p>
+        <p>✉️ <strong>Email:</strong> smceramichesrls@gmail.com</p>
+      </div>
+
+      <form action="https://formsubmit.co/smceramichesrls@gmail.com" method="POST" style="flex: 2; min-width: 300px; display: flex; flex-direction: column; gap: 15px;">
+        <!-- Configurazione FormSubmit -->
+        <input type="hidden" name="_subject" value="Nuova richiesta di appuntamento dal sito web!">
+        <input type="hidden" name="_captcha" value="false">
+
+        <input type="text" name="Nome" placeholder="Il tuo nome *" required style="padding: 12px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 1rem;">
+        <input type="email" name="Email" placeholder="Indirizzo email *" required style="padding: 12px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 1rem;">
+        <input type="tel" name="Telefono" placeholder="Telefono *" required style="padding: 12px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 1rem;">
+        <input type="text" name="Oggetto" placeholder="Oggetto" style="padding: 12px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 1rem;">
+        
+        <textarea name="Messaggio" placeholder="Specificare giorno, orario desiderato e note..." required style="padding: 12px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 1rem; min-height: 120px;"></textarea>
+
+        <div style="display: flex; gap: 10px; align-items: flex-start; font-size: 0.85rem; color: #718096;">
+          <input type="checkbox" id="privacy" required style="margin-top: 3px;">
+          <label for="privacy">Ho preso visione dell'informativa privacy e autorizzo il trattamento dei dati per la prenotazione.</label>
+        </div>
+
+        <button type="submit" class="btn-main" style="border: none; cursor: pointer; text-align: center; width: fit-content;">INVIA RICHIESTA</button>
+      </form>
+    </div>
+  </section>
 
   <!-- Sezione Azienda -->
   <section id="azienda" class="about-section">
@@ -627,6 +668,7 @@
         <ul>
           <li><a href="#prodotti">Prodotti</a></li>
           <li><a href="#marchi">I Nostri Marchi</a></li>
+          <li><a href="#prenota">Prenota Appuntamento</a></li>
           <li><a href="#azienda">Azienda</a></li>
         </ul>
       </div>
