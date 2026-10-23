@@ -3,12 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SM Ceramiche - Pavimenti e rivestimenti</title>
+  <title>SM Ceramiche - Pavimenti, Rivestimenti e Arredo Bagno a Sassari</title>
+  
+  <!-- Font Google Elegant & Modern -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    /* Stile per lo Slider in movimento */
+    /* Reset & Variabili di Colore Cromaticamente Armoniose */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    :root {
+      --primary-dark: #1a1a1a;
+      --secondary-dark: #2d3136;
+      --accent-gold: #a67c1e;
+      --accent-gold-hover: #8e6814;
+      --bg-cream: #faf8f5;
+      --bg-white: #ffffff;
+      --border-subtle: #e8e4dc;
+      --text-main: #242424;
+      --text-muted: #666666;
+    }
+
+    body {
+      color: var(--text-main);
+      background-color: var(--bg-cream);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      background-color: var(--primary-dark);
+      color: #e5e5e5;
+      padding: 10px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      letter-spacing: 0.5px;
+    }
+
+    .top-bar a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 15px;
+      font-weight: 500;
+    }
+
+    /* Header e Navigazione */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.04);
+      z-index: 1000;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 6%;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      color: var(--primary-dark);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 500;
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.25s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent-gold);
+    }
+
+    .action-btns {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-contact {
+      padding: 9px 18px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn-wa {
+      background-color: #25d366;
+      color: white;
+    }
+
+    .btn-ig {
+      background-color: #e1306c;
+      color: white;
+    }
+
+    .btn-contact:hover {
+      opacity: 0.9;
+    }
+
+    /* Hero Slider */
     .hero-slider {
       position: relative;
-      height: 80vh;
+      height: 75vh;
       width: 100%;
       overflow: hidden;
       display: flex;
@@ -42,250 +170,199 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.4);
+      background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%);
       z-index: 2;
     }
 
     .hero-content {
       position: relative;
       z-index: 3;
-    }
-
-    /* Reset & Variabili */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-    }
-
-    :root {
-      --primary-color: #1a1a1a;
-      --accent-color: #3182ce;
-      --bg-light: #f8f9fa;
-      --text-dark: #2d3748;
-      --text-muted: #718096;
-    }
-
-    body {
-      color: var(--text-dark);
-      background-color: #ffffff;
-      line-height: 1.6;
-    }
-
-    /* Header e Navigazione */
-    header {
-      position: sticky;
-      top: 0;
-      background: #ffffff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      z-index: 1000;
-    }
-
-    .top-bar {
-      background-color: var(--primary-color);
-      color: #fff;
-      padding: 8px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.85rem;
-    }
-
-    .top-bar a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 15px;
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 5%;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      letter-spacing: 2px;
-      color: var(--primary-color);
-      text-decoration: none;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 25px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--text-dark);
-      font-weight: 500;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-
-    nav a:hover {
-      color: var(--accent-color);
-    }
-
-    .action-btns {
-      display: flex;
-      gap: 10px;
-    }
-
-    .btn-contact {
-      padding: 8px 16px;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    .btn-wa {
-      background-color: #25d366;
-      color: white;
-    }
-
-    .btn-ig {
-      background-color: #e1306c;
-      color: white;
-    }
-
-    /* Hero Banner */
-    .hero {
-      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      height: 70vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
+      max-width: 800px;
       padding: 0 20px;
     }
 
     .hero-content h1 {
-      font-size: 3rem;
+      font-size: 3.2rem;
       font-weight: 300;
       margin-bottom: 15px;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     .hero-content p {
-      font-size: 1.2rem;
-      margin-bottom: 25px;
+      font-size: 1.25rem;
+      margin-bottom: 30px;
       font-weight: 300;
+      color: #f0f0f0;
     }
 
     .btn-main {
       display: inline-block;
-      padding: 12px 30px;
-      background-color: #ffffff;
-      color: var(--primary-color);
+      padding: 14px 34px;
+      background-color: var(--accent-gold);
+      color: #ffffff;
       text-decoration: none;
       font-weight: 600;
+      font-size: 0.85rem;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: all 0.3s;
+      letter-spacing: 1.5px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     .btn-main:hover {
-      background-color: var(--primary-color);
-      color: #ffffff;
+      background-color: var(--accent-gold-hover);
+      transform: translateY(-2px);
     }
 
     /* Sezioni Generali */
     section {
-      padding: 80px 5%;
+      padding: 90px 6%;
     }
 
     .section-title {
       text-align: center;
-      font-size: 2rem;
-      margin-bottom: 10px;
+      font-size: 2.1rem;
+      margin-bottom: 12px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      font-weight: 400;
+      color: var(--primary-dark);
     }
 
     .section-subtitle {
       text-align: center;
       color: var(--text-muted);
-      margin-bottom: 50px;
+      margin-bottom: 55px;
+      font-size: 1rem;
+      font-weight: 400;
     }
 
-    /* Griglia Catalogo Prodotti */
-    .product-grid {
+    /* --- SEZIONE PRODOTTI ARCHITETTURA (PROPOSTA 1 INTEGRATA) --- */
+    .product-section-wrapper {
+      background-color: var(--bg-cream);
+    }
+
+    .arch-product-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      gap: 32px;
     }
 
-    .product-card {
-      background: #ffffff;
-      border: 1px solid #edf2f7;
-      border-radius: 6px;
+    .arch-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
       overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
     }
 
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    .arch-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.07);
+      border-color: var(--accent-gold);
     }
 
-    .product-card img {
+    .arch-card-image {
+      position: relative;
+      height: 260px;
+      overflow: hidden;
+    }
+
+    .arch-card-image img {
       width: 100%;
-      height: 250px;
+      height: 100%;
       object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
-    .product-info {
-      padding: 20px;
-      text-align: center;
+    .arch-card:hover .arch-card-image img {
+      transform: scale(1.06);
     }
 
-    .product-info h3 {
-      font-size: 1.2rem;
+    .arch-card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .arch-card-title {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--primary-dark);
       margin-bottom: 8px;
     }
 
-    .product-info p {
+    .arch-card-desc {
+      font-size: 0.92rem;
       color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 15px;
+      margin-bottom: 18px;
+      line-height: 1.5;
     }
 
-    .product-info a {
-      color: var(--primary-color);
-      text-decoration: none;
+    .arch-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 22px;
+      margin-top: auto;
+    }
+
+    .arch-tag {
+      font-size: 0.72rem;
       font-weight: 600;
-      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      padding: 4px 10px;
+      background-color: var(--bg-cream);
+      color: var(--primary-dark);
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
       text-transform: uppercase;
+    }
+
+    .arch-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .arch-link:hover {
+      color: var(--primary-dark);
+      transform: translateX(4px);
     }
 
     /* Sezione Marchi */
     .brands-section {
-      background-color: var(--bg-light);
+      background-color: #ffffff;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
     }
 
     .brands-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 22px;
       align-items: center;
     }
 
     .brand-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 30px 20px;
+      background: var(--bg-cream);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 24px 16px;
       text-align: center;
       text-decoration: none;
-      color: var(--primary-color);
+      color: var(--primary-dark);
       transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
@@ -294,59 +371,101 @@
     }
 
     .brand-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-      border-color: var(--accent-color);
+      background: #ffffff;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      border-color: var(--accent-gold);
     }
 
     .brand-logo-title {
-      font-size: 1.4rem;
-      font-weight: bold;
-      letter-spacing: 2px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     .brand-card span {
-      font-size: 0.8rem;
-      color: var(--accent-color);
+      font-size: 0.75rem;
+      color: var(--accent-gold);
       font-weight: 600;
       text-transform: uppercase;
     }
 
-    /* Sezione Azienda */
-    .about-section {
-      background-color: #ffffff;
+    /* Sezione Prenotazione Appuntamento */
+    .prenota-section {
+      background-color: var(--bg-cream);
+    }
+
+    .info-alert-box {
+      background-color: #f3eee6;
+      border-left: 4px solid var(--accent-gold);
+      border-radius: 6px;
+      padding: 24px 28px;
+      margin-bottom: 40px;
+      color: var(--primary-dark);
+    }
+
+    .info-alert-box ul {
+      margin: 12px 0 12px 20px;
+    }
+
+    .prenota-flex {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
-      gap: 40px;
+      gap: 35px;
     }
 
-    .about-text {
+    .prenota-info-card {
       flex: 1;
+      min-width: 280px;
+      background-color: #ffffff;
+      padding: 35px;
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .prenota-info-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 18px;
+      color: var(--primary-dark);
+      letter-spacing: 1px;
+    }
+
+    .prenota-info-card p {
+      margin-bottom: 12px;
+      color: var(--text-muted);
+    }
+
+    .prenota-form {
+      flex: 2;
       min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
 
-    .about-text h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    .about-image {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    .about-image img {
-      width: 100%;
+    .prenota-form input, 
+    .prenota-form textarea {
+      padding: 14px;
+      border: 1px solid var(--border-subtle);
       border-radius: 6px;
+      font-size: 0.95rem;
+      background: #ffffff;
+      outline: none;
+      transition: border-color 0.2s ease;
     }
 
-    /* Nuova Sezione Mappa e Orari */
+    .prenota-form input:focus, 
+    .prenota-form textarea:focus {
+      border-color: var(--accent-gold);
+    }
+
+    /* Sezione Mappa & Orari */
     .info-location-section {
-      padding: 60px 5%;
-      background-color: #f9f9f9;
+      padding: 80px 6%;
+      background-color: #ffffff;
+      border-top: 1px solid var(--border-subtle);
     }
 
     .info-location-container {
@@ -358,43 +477,45 @@
       width: 100%;
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      margin-bottom: 30px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 35px;
+      border: 1px solid var(--border-subtle);
     }
 
     .info-grid {
       display: flex;
       gap: 40px;
-      background: #ffffff;
-      padding: 30px;
+      background: var(--bg-cream);
+      padding: 35px;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border: 1px solid var(--border-subtle);
     }
 
     .location-details {
       flex: 1;
-      border-right: 1px solid #eee;
-      padding-right: 20px;
+      border-right: 1px solid var(--border-subtle);
+      padding-right: 25px;
     }
 
     .location-details h3, 
     .hours-details h3 {
       font-size: 1.1rem;
-      letter-spacing: 1px;
-      color: #666;
-      margin-bottom: 15px;
+      letter-spacing: 1.5px;
+      color: var(--primary-dark);
+      margin-bottom: 18px;
       text-transform: uppercase;
+      font-weight: 600;
     }
 
     .location-details .address {
-      font-size: 1rem;
-      line-height: 1.5;
+      font-size: 0.98rem;
+      line-height: 1.6;
       margin-bottom: 15px;
-      color: #444;
+      color: var(--text-muted);
     }
 
     .location-details .phone a {
-      color: #000;
+      color: var(--primary-dark);
       text-decoration: none;
       font-weight: bold;
     }
@@ -411,98 +532,144 @@
     .hours-table th {
       text-align: left;
       font-weight: 600;
-      color: #888;
-      padding-bottom: 10px;
-      border-bottom: 2px solid #f0f0f0;
+      color: var(--text-muted);
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border-subtle);
+      font-size: 0.88rem;
+      text-transform: uppercase;
     }
 
     .hours-table td {
-      padding: 10px 0;
-      border-bottom: 1px solid #f5f5f5;
-      font-size: 0.95rem;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.94rem;
     }
 
     .hours-table .day {
       font-weight: 600;
-      color: #555;
+      color: var(--primary-dark);
       width: 30%;
     }
 
     .hours-table .closed {
-      color: #888;
+      color: #999999;
       font-style: italic;
+    }
+
+    /* Sezione Azienda */
+    .about-section {
+      background-color: var(--bg-cream);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 45px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-text h2 {
+      font-size: 2.1rem;
+      margin-bottom: 22px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: var(--primary-dark);
+    }
+
+    .about-text p {
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
     }
 
     /* Footer */
     footer {
-      background-color: var(--primary-color);
+      background-color: var(--primary-dark);
       color: #ffffff;
-      padding: 60px 5% 20px;
+      padding: 70px 6% 25px;
     }
 
     .footer-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 40px;
-      margin-bottom: 40px;
+      margin-bottom: 45px;
     }
 
     .footer-col h4 {
       font-size: 1.1rem;
-      margin-bottom: 20px;
-      letter-spacing: 1px;
+      margin-bottom: 22px;
+      letter-spacing: 1.5px;
+      font-weight: 600;
+      color: #ffffff;
     }
 
     .footer-col p, .footer-col li {
       font-size: 0.9rem;
-      color: #a0aec0;
-      margin-bottom: 10px;
+      color: #a3a3a3;
+      margin-bottom: 12px;
       list-style: none;
     }
 
     .footer-col a {
-      color: #a0aec0;
+      color: #a3a3a3;
       text-decoration: none;
+      transition: color 0.2s ease;
     }
 
     .footer-col a:hover {
-      color: #ffffff;
+      color: var(--accent-gold);
     }
 
     .footer-bottom {
-      border-top: 1px solid #2d3748;
-      padding-top: 20px;
+      border-top: 1px solid #333333;
+      padding-top: 25px;
       text-align: center;
-      font-size: 0.8rem;
-      color: #a0aec0;
+      font-size: 0.82rem;
+      color: #888888;
     }
 
     /* Responsive */
     @media (max-width: 768px) {
       .nav-container {
         flex-direction: column;
-        gap: 15px;
+        gap: 18px;
       }
 
       nav ul {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 15px;
       }
 
       .hero-content h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
 
       .info-grid {
         flex-direction: column;
-        gap: 20px;
+        gap: 25px;
       }
       
       .location-details {
         border-right: none;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid var(--border-subtle);
         padding-right: 0;
-        padding-bottom: 20px;
+        padding-bottom: 25px;
       }
     }
   </style>
@@ -511,7 +678,7 @@
 
   <!-- Top Bar -->
   <div class="top-bar">
-    <div>📍 Sassari | 📞 Tel: 079398144</div>
+    <div>📍 Via Giovanni Bruno, 30 - Sassari | 📞 Tel: 079 398144</div>
     <div>
       <a href="#">IT</a> | <a href="#">EN</a>
     </div>
@@ -538,7 +705,7 @@
     </div>
   </header>
 
-  <!-- Sezione Hero / Slider in Movimento -->
+  <!-- Hero Slider -->
   <section id="home" class="hero-slider">
     <div class="slide active" style="background-image: url('bagno 1 slide.jpg')"></div>
     <div class="slide" style="background-image: url('bagno 2 slide.jpg')"></div>
@@ -546,184 +713,217 @@
     
     <div class="hero-content">
       <h1>Eleganti e Funzionali</h1>
-      <p>Soluzioni in ceramica di alta qualità per l'ambiente bagno</p>
+      <p>Soluzioni in ceramica e arredo bagno di alta qualità Made in Italy</p>
       <a href="#prenota" class="btn-main">PRENOTA UN APPUNTAMENTO</a>
     </div>
   </section>
 
-  <!-- Sezione Prodotti -->
-  <section id="prodotti">
+  <!-- SEZIONE PRODOTTI RIPROGETTATA (STILE ARCHITETTURA & FINITURE) -->
+  <section id="prodotti" class="product-section-wrapper">
     <h2 class="section-title">I Nostri Prodotti</h2>
-    <p class="section-subtitle">Design, ricerca e tradizione della ceramica italiana</p>
+    <p class="section-subtitle">Design, innovazione materica e tradizione della ceramica italiana</p>
     
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="bagno.jpg" alt="Arredo Bagno">
-        <div class="product-info">
-          <h3>Arredo bagno</h3>
-          <p>Mobili e accessori</p>
-          <a href="arredo-bagno.html">VEDI DETTAGLI &rarr;</a>
+    <div class="arch-product-grid">
+      
+      <!-- Card 1: Arredo Bagno -->
+      <div class="arch-card">
+        <div class="arch-card-image">
+          <img src="bagno.jpg" alt="Arredo Bagno SM Ceramiche">
+        </div>
+        <div class="arch-card-body">
+          <h3 class="arch-card-title">Arredo Bagno</h3>
+          <p class="arch-card-desc">Mobili sospesi e componibili, lavabi da appoggio e specchi idrorepellenti ad altissima personalizzazione.</p>
+          <div class="arch-tags">
+            <span class="arch-tag">Mobili Componibili</span>
+            <span class="arch-tag">Top Gres Integrato</span>
+            <span class="arch-tag">Total Look</span>
+          </div>
+          <a href="arredo-bagno.html" class="arch-link">Vedi Dettagli &rarr;</a>
         </div>
       </div>
 
-      <div class="product-card">
-        <img src="marmo.jpg" alt="Rivestimenti bagno">
-        <div class="product-info">
-          <h3>Rivestimenti bagno</h3>
-          <p>Ceramiche, gres effetto marmo.</p>
-          <a href="#">Vedi Dettagli &rarr;</a>
+      <!-- Card 2: Rivestimenti Bagno -->
+      <div class="arch-card">
+        <div class="arch-card-image">
+          <img src="marmo.jpg" alt="Rivestimenti e Gres Effetto Marmo">
+        </div>
+        <div class="arch-card-body">
+          <h3 class="arch-card-title">Rivestimenti Bagno</h3>
+          <p class="arch-card-desc">Ceramiche, grandi lastre e gres porcellanato effetto marmo, pietra e wallpaper botanici coordinati.</p>
+          <div class="arch-tags">
+            <span class="arch-tag">Effetto Marmo</span>
+            <span class="arch-tag">Grandi Lastre</span>
+            <span class="arch-tag">Antibatterico</span>
+          </div>
+          <a href="#prenota" class="arch-link">Vedi Dettagli &rarr;</a>
         </div>
       </div>
 
-      <div class="product-card">
-        <img src="elisir.jpg" alt="Pavimenti">
-        <div class="product-info">
-          <h3>Pavimenti</h3>
-          <p>Pavimenti ceramici.</p>
-          <a href="#">Vedi Dettagli &rarr;</a>
+      <!-- Card 3: Pavimenti -->
+      <div class="arch-card">
+        <div class="arch-card-image">
+          <img src="elisir.jpg" alt="Pavimenti Ceramici e Gres">
+        </div>
+        <div class="arch-card-body">
+          <h3 class="arch-card-title">Pavimenti</h3>
+          <p class="arch-card-desc">Pavimenti in gres porcellanato effetto legno naturale, pietra e cemento ad alta resistenza all'usura.</p>
+          <div class="arch-tags">
+            <span class="arch-tag">Effetto Legno</span>
+            <span class="arch-tag">Gres Porcellanato</span>
+            <span class="arch-tag">Resistente graffi</span>
+          </div>
+          <a href="#prenota" class="arch-link">Vedi Dettagli &rarr;</a>
         </div>
       </div>
 
-      <div class="product-card">
-        <img src="esterni.jpg" alt="Pavimenti per esterno">
-        <div class="product-info">
-          <h3>Pavimenti per esterno</h3>
-          <p>Rivestimenti per esterno.</p>
-          <a href="#">Vedi Dettagli &rarr;</a>
+      <!-- Card 4: Pavimenti per Esterno -->
+      <div class="arch-card">
+        <div class="arch-card-image">
+          <img src="esterni.jpg" alt="Pavimenti per Esterno Spessore 20mm">
+        </div>
+        <div class="arch-card-body">
+          <h3 class="arch-card-title">Pavimenti per Esterno</h3>
+          <p class="arch-card-desc">Superfici antiscivolo ad alto spessore per terrazzi, giardini, camminamenti e aree piscina resistenti al gelo.</p>
+          <div class="arch-tags">
+            <span class="arch-tag">Spessore 20mm</span>
+            <span class="arch-tag">Antiscivolo R11</span>
+            <span class="arch-tag">Ingelevile</span>
+          </div>
+          <a href="#prenota" class="arch-link">Vedi Dettagli &rarr;</a>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- Sezione I Nostri Marchi -->
   <section id="marchi" class="brands-section">
     <h2 class="section-title">I Nostri Marchi</h2>
-    <p class="section-subtitle">Partner d'eccellenza per la ceramica e l'arredamento</p>
+    <p class="section-subtitle">Partner d'eccellenza per la ceramica, i sanitari e la rubinetteria</p>
 
     <div class="brands-grid">
       <a href="https://www.italgranitigroup.com" target="_blank" class="brand-card">
         <div class="brand-logo-title">Italgraniti</div>
-        <span>Visita il sito ufficiale &rarr;</span>
+        <span>Visita il sito &rarr;</span>
       </a>
 
       <a href="https://www.panaria.it" target="_blank" class="brand-card">
         <div class="brand-logo-title">Panaria</div>
-        <span>Visita il sito ufficiale &rarr;</span>
+        <span>Visita il sito &rarr;</span>
       </a>
 
       <a href="https://www.marcacorona.it" target="_blank" class="brand-card">
         <div class="brand-logo-title">Marca Corona</div>
-        <span>Visita il sito ufficiale &rarr;</span>
+        <span>Visita il sito &rarr;</span>
       </a>
 
       <a href="https://www.fincibec.it" target="_blank" class="brand-card">
         <div class="brand-logo-title">Fincibec</div>
-        <span>Visita il sito ufficiale &rarr;</span>
+        <span>Visita il sito &rarr;</span>
       </a>
 
       <a href="https://tuscaniagres.it" target="_blank" class="brand-card">
         <div class="brand-logo-title">Tuscania</div>
-        <span>Visita il sito ufficiale &rarr;</span>
+        <span>Visita il sito &rarr;</span>
       </a>
 
       <a href="https://www.naxos-ceramica.it" target="_blank" class="brand-card">
         <div class="brand-logo-title">Naxos</div>
-        <span>Visita il sito ufficiale &rarr;</span>
+        <span>Visita il sito &rarr;</span>
       </a>
 
       <a href="https://www.mobilduenne.it" target="_blank" class="brand-card">
         <div class="brand-logo-title">MobildueNne</div>
-        <span>Visita il sito ufficiale &rarr;</span>
+        <span>Visita il sito &rarr;</span>
       </a>
 
       <a href="https://bmtbagni.it" target="_blank" class="brand-card">
         <div class="brand-logo-title">BMT</div>
-        <span>Visita il sito ufficiale &rarr;</span>
+        <span>Visita il sito &rarr;</span>
       </a>
 
       <a href="https://www.globaltradearredobagno.com" target="_blank" class="brand-card">
         <div class="brand-logo-title">Global Trade</div>
-        <span>Visita il sito ufficiale &rarr;</span>
+        <span>Visita il sito &rarr;</span>
       </a>
 
       <a href="https://www.kios.com" target="_blank" class="brand-card">
         <div class="brand-logo-title">Kios Bagno</div>
-        <span>Visita il sito ufficiale &rarr;</span>
+        <span>Visita il sito &rarr;</span>
       </a>
 
       <a href="https://www.novellini.it" target="_blank" class="brand-card">
         <div class="brand-logo-title">Novellini</div>
-        <span>Visita il sito ufficiale &rarr;</span>
+        <span>Visita il sito &rarr;</span>
       </a>
 
       <a href="https://www.inda.net" target="_blank" class="brand-card">
         <div class="brand-logo-title">Inda</div>
-        <span>Visita il sito ufficiale &rarr;</span>
+        <span>Visita il sito &rarr;</span>
       </a>
 
       <a href="https://www.paini.it" target="_blank" class="brand-card">
         <div class="brand-logo-title">Paini</div>
-        <span>Visita il sito ufficiale &rarr;</span>
+        <span>Visita il sito &rarr;</span>
       </a>
 
       <a href="https://www.lafabbrica.it" target="_blank" class="brand-card">
         <div class="brand-logo-title">La Fabbrica</div>
-        <span>Visita il sito ufficiale &rarr;</span>
+        <span>Visita il sito &rarr;</span>
       </a>
 
       <a href="https://www.edilkamin.com" target="_blank" class="brand-card">
         <div class="brand-logo-title">Edilkamin</div>
-        <span>Visita il sito ufficiale &rarr;</span>
+        <span>Visita il sito &rarr;</span>
       </a>
 
       <a href="https://www.cordivari.it" target="_blank" class="brand-card">
         <div class="brand-logo-title">Cordivari</div>
-        <span>Visita il sito ufficiale &rarr;</span>
+        <span>Visita il sito &rarr;</span>
       </a>
 
       <a href="https://www.gsisanitari.it" target="_blank" class="brand-card">
         <div class="brand-logo-title">GSI Sanitari</div>
-        <span>Visita il sito ufficiale &rarr;</span>
+        <span>Visita il sito &rarr;</span>
       </a>
     </div>
   </section>
 
   <!-- Sezione Prenota Appuntamento -->
-  <section id="prenota" style="padding: 80px 5%; background-color: #f8f9fa;">
+  <section id="prenota" class="prenota-section">
     <h2 class="section-title">PRENOTA UN APPUNTAMENTO</h2>
-    <p class="section-subtitle">Per <strong>prenotare un appuntamento</strong> in showroom, compila il modulo sottostante!</p>
+    <p class="section-subtitle">Per prenotare una consulenza dedicata in showroom, compila il modulo sottostante</p>
 
-    <div style="background-color: #e6f4f8; border-radius: 8px; padding: 25px; margin-bottom: 40px; color: #2c5282;">
+    <div class="info-alert-box">
       <strong>RICORDA DI SPECIFICARE NEL MESSAGGIO:</strong>
-      <ul style="margin: 15px 0 15px 20px;">
+      <ul>
         <li>Il <strong>giorno</strong> e l'<strong>orario</strong> che preferisci</li>
-        <li>I prodotti a cui sei interessato (arredo bagno, pavimenti, ecc.)</li>
+        <li>I prodotti a cui sei interessato (arredo bagno, pavimenti, sanitari, ecc.)</li>
       </ul>
       <p>Ti ricontatteremo al più presto per confermare la tua prenotazione!</p>
     </div>
 
-    <div style="display: flex; flex-wrap: wrap; gap: 40px;">
-      <div style="flex: 1; min-width: 280px; background-color: #ffffff; padding: 30px; border-radius: 8px; border: 1px solid #e2e8f0;">
-        <h3 style="margin-bottom: 15px;">SM CERAMICHE S.R.L.</h3>
+    <div class="prenota-flex">
+      <div class="prenota-info-card">
+        <h3>SM CERAMICHE S.R.L.</h3>
         <p>📍 Via Giovanni Bruno, 30<br>07100 Sassari (SS)</p><br>
         <p>📞 <strong>Telefono:</strong> +39 079398144</p>
         <p>💬 <strong>WhatsApp:</strong> +39 3664760690</p>
         <p>✉️ <strong>Email:</strong> smceramichesrls@gmail.com</p>
       </div>
 
-      <form action="https://formsubmit.co/smceramichesrls@gmail.com" method="POST" style="flex: 2; min-width: 300px; display: flex; flex-direction: column; gap: 15px;">
-        <!-- Configurazione FormSubmit -->
+      <form action="https://formsubmit.co/smceramichesrls@gmail.com" method="POST" class="prenota-form">
         <input type="hidden" name="_subject" value="Nuova richiesta di appuntamento dal sito web!">
         <input type="hidden" name="_captcha" value="false">
 
-        <input type="text" name="Nome" placeholder="Il tuo nome *" required style="padding: 12px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 1rem;">
-        <input type="email" name="Email" placeholder="Indirizzo email *" required style="padding: 12px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 1rem;">
-        <input type="tel" name="Telefono" placeholder="Telefono *" required style="padding: 12px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 1rem;">
-        <input type="text" name="Oggetto" placeholder="Oggetto" style="padding: 12px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 1rem;">
+        <input type="text" name="Nome" placeholder="Il tuo nome *" required>
+        <input type="email" name="Email" placeholder="Indirizzo email *" required>
+        <input type="tel" name="Telefono" placeholder="Telefono *" required>
+        <input type="text" name="Oggetto" placeholder="Oggetto">
         
-        <textarea name="Messaggio" placeholder="Specificare giorno, orario desiderato e note..." required style="padding: 12px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 1rem; min-height: 120px;"></textarea>
+        <textarea name="Messaggio" placeholder="Specificare giorno, orario desiderato e note..." required style="min-height: 120px;"></textarea>
 
-        <div style="display: flex; gap: 10px; align-items: flex-start; font-size: 0.85rem; color: #718096;">
+        <div style="display: flex; gap: 10px; align-items: flex-start; font-size: 0.85rem; color: var(--text-muted);">
           <input type="checkbox" id="privacy" required style="margin-top: 3px;">
           <label for="privacy">Ho preso visione dell'informativa privacy e autorizzo il trattamento dei dati per la prenotazione.</label>
         </div>
@@ -733,7 +933,7 @@
     </div>
   </section>
 
-  <!-- NUOVA SEZIONE: MAPPA E ORARI DI APERTURA -->
+  <!-- SEZIONE MAPPA E ORARI DI APERTURA -->
   <section class="info-location-section">
     <div class="info-location-container">
       
@@ -742,7 +942,7 @@
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000.95758204859!2d8.5375!3d40.7383!2m3!1f0!0f0!0s0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12dc6312a02b1bd1%3A0x6b4092bbf3f3458b!2sVia%20Giovanni%20Bruno%2C%2030%2C%2007100%20Sassari%20SS!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit" 
           width="100%" 
-          height="350" 
+          height="360" 
           style="border:0;" 
           allowfullscreen="" 
           loading="lazy" 
@@ -755,7 +955,7 @@
         
         <!-- Colonna Sinistra: Indirizzo e Contatti -->
         <div class="location-details">
-          <h3>SASSARI</h3>
+          <h3>SASSARI SHOWROOM</h3>
           <p class="address">
             Via Giovanni Bruno, 30<br>
             07100 Sassari (SS)
@@ -767,12 +967,12 @@
 
         <!-- Colonna Destra: Orari Showroom -->
         <div class="hours-details">
-          <h3>ORARI SHOWROOM</h3>
+          <h3>ORARI DI APERTURA</h3>
           
           <table class="hours-table">
             <thead>
               <tr>
-                <th></th>
+                <th>Giorno</th>
                 <th>Mattina</th>
                 <th>Pomeriggio</th>
               </tr>
@@ -823,17 +1023,17 @@
   <!-- Sezione Azienda -->
   <section id="azienda" class="about-section">
     <div class="about-text">
-      <h2>Mobili e arredo bagno</h2>
+      <h2>Mobili e arredo bagno su misura</h2>
       <p>
         Ogni nostro elemento ha caratteristiche estetiche ben definite e una molteplice versatilità d'uso che permette infinite combinazioni dalla forte personalizzazione.
       </p>
       <p>
-        Proponiamo collezioni in continuo sviluppo, dal design super elegante: dai laccati opachi con top in mineralmarmo fino ai dettagli in frassino massello coordinati. Realizziamo anche soluzioni componibili con doppi cassetti, lavabi da appoggio e colonne sospese per garantire la massima funzionalità.
+        Proponiamo collezioni in continuo sviluppo, dal design super elegante: dai laccati opachi con top in mineralmarmo e gres porcellanato fino ai dettagli in frassino massello coordinati. Realizziamo anche soluzioni componibili con doppi cassetti, lavabi da appoggio e colonne sospese per garantire la massima funzionalità.
       </p>
       <p><strong>Tutto interamente personalizzabile in base all'esigenza del cliente.</strong></p>
     </div>
     <div class="about-image">
-      <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" alt="Arredo Bagno SM Ceramiche">
+      <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" alt="Arredo Bagno SM Ceramiche Sassari">
     </div>
   </section>
 
@@ -841,14 +1041,14 @@
   <footer id="contatti">
     <div class="footer-grid">
       <div class="footer-col">
-        <h4>SM CERAMICHE</h4>
-        <p>Pavimenti, rivestimenti e arredo bagno.</p>
+        <h4>SM CERAMICHE S.R.L.</h4>
+        <p>Pavimenti, rivestimenti, arredo bagno e sanitari a Sassari.</p>
       </div>
 
       <div class="footer-col">
         <h4>Contatti</h4>
-        <p>📍 Via giovanni bruno, 30<br>07100 sassari ( SS )</p>
-        <p>📞 Tel: +39 079398144</p>
+        <p>📍 Via Giovanni Bruno, 30<br>07100 Sassari (SS)</p>
+        <p>📞 Tel: +39 079 398144</p>
         <p>✉️ Email: smceramichesrls@gmail.com</p>
       </div>
 
