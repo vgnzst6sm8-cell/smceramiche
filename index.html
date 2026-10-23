@@ -343,6 +343,96 @@
       border-radius: 6px;
     }
 
+    /* Nuova Sezione Mappa e Orari */
+    .info-location-section {
+      padding: 60px 5%;
+      background-color: #f9f9f9;
+    }
+
+    .info-location-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .map-wrapper {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+    }
+
+    .info-grid {
+      display: flex;
+      gap: 40px;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .location-details {
+      flex: 1;
+      border-right: 1px solid #eee;
+      padding-right: 20px;
+    }
+
+    .location-details h3, 
+    .hours-details h3 {
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      color: #666;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .location-details .address {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 15px;
+      color: #444;
+    }
+
+    .location-details .phone a {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hours-details {
+      flex: 2;
+    }
+
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .hours-table th {
+      text-align: left;
+      font-weight: 600;
+      color: #888;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #f0f0f0;
+    }
+
+    .hours-table td {
+      padding: 10px 0;
+      border-bottom: 1px solid #f5f5f5;
+      font-size: 0.95rem;
+    }
+
+    .hours-table .day {
+      font-weight: 600;
+      color: #555;
+      width: 30%;
+    }
+
+    .hours-table .closed {
+      color: #888;
+      font-style: italic;
+    }
+
     /* Footer */
     footer {
       background-color: var(--primary-color);
@@ -401,6 +491,18 @@
 
       .hero-content h1 {
         font-size: 2rem;
+      }
+
+      .info-grid {
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .location-details {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding-right: 0;
+        padding-bottom: 20px;
       }
     }
   </style>
@@ -628,6 +730,93 @@
 
         <button type="submit" class="btn-main" style="border: none; cursor: pointer; text-align: center; width: fit-content;">INVIA RICHIESTA</button>
       </form>
+    </div>
+  </section>
+
+  <!-- NUOVA SEZIONE: MAPPA E ORARI DI APERTURA -->
+  <section class="info-location-section">
+    <div class="info-location-container">
+      
+      <!-- Mappa Google Embedded -->
+      <div class="map-wrapper">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000.95758204859!2d8.5375!3d40.7383!2m3!1f0!0f0!0s0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12dc6312a02b1bd1%3A0x6b4092bbf3f3458b!2sVia%20Giovanni%20Bruno%2C%2030%2C%2007100%20Sassari%20SS!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit" 
+          width="100%" 
+          height="350" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <!-- Dettagli Sede e Tabella Orari -->
+      <div class="info-grid">
+        
+        <!-- Colonna Sinistra: Indirizzo e Contatti -->
+        <div class="location-details">
+          <h3>SASSARI</h3>
+          <p class="address">
+            Via Giovanni Bruno, 30<br>
+            07100 Sassari (SS)
+          </p>
+          <p class="phone">
+            <strong>Telefono:</strong> <a href="tel:+39079398144">079 398144</a>
+          </p>
+        </div>
+
+        <!-- Colonna Destra: Orari Showroom -->
+        <div class="hours-details">
+          <h3>ORARI SHOWROOM</h3>
+          
+          <table class="hours-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Mattina</th>
+                <th>Pomeriggio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="day">Lunedì</td>
+                <td>08:30 – 13:00</td>
+                <td>16:00 – 19:00</td>
+              </tr>
+              <tr>
+                <td class="day">Martedì</td>
+                <td>08:30 – 13:00</td>
+                <td>16:00 – 19:00</td>
+              </tr>
+              <tr>
+                <td class="day">Mercoledì</td>
+                <td>08:30 – 13:00</td>
+                <td>16:00 – 19:00</td>
+              </tr>
+              <tr>
+                <td class="day">Giovedì</td>
+                <td>08:30 – 13:00</td>
+                <td>16:00 – 19:00</td>
+              </tr>
+              <tr>
+                <td class="day">Venerdì</td>
+                <td>08:30 – 13:00</td>
+                <td>16:00 – 19:00</td>
+              </tr>
+              <tr>
+                <td class="day">Sabato</td>
+                <td>09:00 – 13:00</td>
+                <td class="closed">Chiuso</td>
+              </tr>
+              <tr>
+                <td class="day">Domenica</td>
+                <td colspan="2" class="closed">Chiuso</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
     </div>
   </section>
 
