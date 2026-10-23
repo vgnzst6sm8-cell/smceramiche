@@ -3,382 +3,173 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arredo Bagno - SM Ceramiche</title>
-  
+  <title>Arredo Bagno & Collections - SM Ceramiche</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Reset & Variabili coerenti con la Home */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background-color: #FAF8F5; color: #1A1A1A; line-height: 1.6; }
 
-    :root {
-      --primary-color: #1a1a1a;
-      --accent-color: #3182ce;
-      --bg-light: #f8f9fa;
-      --text-dark: #2d3748;
-      --text-muted: #718096;
-    }
+    header { background: #ffffff; padding: 20px 6%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #E8E4DC; position: sticky; top:0; z-index: 10; }
+    .logo { font-size: 1.3rem; font-weight: 700; letter-spacing: 2px; color: #1A1A1A; text-decoration: none; }
+    .btn-back { text-decoration: none; color: #1A1A1A; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; padding: 8px 18px; border: 1px solid #1A1A1A; border-radius: 4px; transition: 0.3s; }
+    .btn-back:hover { background: #1A1A1A; color: #fff; }
 
-    body {
-      color: var(--text-dark);
-      background-color: #ffffff;
-      line-height: 1.6;
-    }
+    .page-hero { padding: 70px 6% 40px; text-align: center; background: #ffffff; border-bottom: 1px solid #E8E4DC; }
+    .page-hero h1 { font-size: 2.4rem; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .page-hero p { color: #666; max-width: 720px; margin: 0 auto; font-size: 1.05rem; }
 
-    /* Header e Navigazione coerenti */
-    header {
-      position: sticky;
-      top: 0;
-      background: #ffffff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      z-index: 1000;
-    }
+    .collection-container { padding: 60px 6%; max-width: 1300px; margin: 0 auto; }
+    
+    /* Layout a file alternate: Immagine + Didascalia/Scheda */
+    .brand-row { display: flex; gap: 50px; align-items: center; margin-bottom: 80px; background: #ffffff; border-radius: 12px; border: 1px solid #E8E4DC; overflow: hidden; padding: 35px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+    .brand-row.reverse { flex-direction: row-reverse; }
 
-    .top-bar {
-      background-color: var(--primary-color);
-      color: #fff;
-      padding: 8px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.85rem;
-    }
+    .brand-image { flex: 1; min-height: 380px; border-radius: 8px; overflow: hidden; }
+    .brand-image img { width: 100%; height: 100%; min-height: 380px; object-fit: cover; display: block; }
 
-    .top-bar a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 15px;
-    }
+    .brand-content { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .brand-name { font-size: 0.8rem; letter-spacing: 2px; font-weight: 700; color: #A67C1E; text-transform: uppercase; margin-bottom: 8px; }
+    .collection-title { font-size: 1.8rem; font-weight: 400; color: #1A1A1A; margin-bottom: 14px; }
+    .collection-desc { color: #555; font-size: 0.98rem; margin-bottom: 20px; line-height: 1.7; }
 
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 5%;
-    }
+    .specs-list { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
+    .spec-item { font-size: 0.8rem; background: #FAF8F5; border: 1px solid #E8E4DC; padding: 6px 12px; border-radius: 4px; color: #444; font-weight: 500; }
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      letter-spacing: 2px;
-      color: var(--primary-color);
-      text-decoration: none;
-    }
+    .action-links { display: flex; gap: 15px; flex-wrap: wrap; }
+    .btn-main { background: #1A1A1A; color: #ffffff; padding: 12px 22px; text-decoration: none; font-size: 0.85rem; font-weight: 600; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+    .btn-main:hover { background: #A67C1E; }
+    .btn-catalog { background: transparent; color: #1A1A1A; border: 1px solid #1A1A1A; padding: 12px 22px; text-decoration: none; font-size: 0.85rem; font-weight: 600; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+    .btn-catalog:hover { background: #FAF8F5; border-color: #A67C1E; color: #A67C1E; }
 
-    .btn-back {
-      color: var(--primary-color);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      border: 1px solid #cbd5e0;
-      padding: 8px 16px;
-      border-radius: 4px;
-      transition: all 0.2s;
-    }
+    footer { background: #1A1A1A; color: #ffffff; text-align: center; padding: 30px 6%; font-size: 0.85rem; }
 
-    .btn-back:hover {
-      background-color: var(--primary-color);
-      color: #fff;
-    }
-
-    /* Sezione Hero della Sub-page */
-    .sub-hero {
-      padding: 60px 5% 40px;
-      text-align: center;
-      background-color: #f9f9f9;
-      border-bottom: 1px solid #eee;
-    }
-
-    .sub-hero h1 {
-      font-size: 2.5rem;
-      font-weight: 300;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .sub-hero p {
-      color: var(--text-muted);
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    /* Griglia Prodotti Arredo Bagno (Stile identico alla Home) */
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      padding: 80px 5%;
-    }
-
-    .product-card {
-      background: #ffffff;
-      border: 1px solid #edf2f7;
-      border-radius: 6px;
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-    }
-
-    /* Contenitore immagine con Badge applicati come nella home */
-    .card-img-wrapper {
-      position: relative;
-      height: 250px;
-    }
-
-    .card-img-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .badge-container {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .badge {
-      background-color: rgba(26, 26, 26, 0.85);
-      color: white;
-      font-size: 0.7rem;
-      font-weight: bold;
-      padding: 4px 10px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      width: fit-content;
-    }
-
-    .product-info {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .product-info h3 {
-      font-size: 1.2rem;
-      margin-bottom: 8px;
-    }
-
-    .product-info p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 15px;
-    }
-
-    /* Box Marchi in Showroom coerente */
-    .brand-showroom-box {
-      margin-top: auto;
-      border-top: 1px solid #edf2f7;
-      padding-top: 15px;
-    }
-
-    .brand-label {
-      font-size: 0.75rem;
-      color: #a0aec0;
-      text-transform: uppercase;
-      font-weight: bold;
-      margin-bottom: 8px;
-      letter-spacing: 0.5px;
-    }
-
-    .brand-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 15px;
-    }
-
-    .brand-tag {
-      background-color: #f7fafc;
-      border: 1px solid #e2e8f0;
-      padding: 3px 8px;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      color: #4a5568;
-    }
-
-    .product-info a {
-      color: var(--primary-color);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .product-info a:hover {
-      color: var(--accent-color);
-    }
-
-    /* Footer */
-    footer {
-      background-color: var(--primary-color);
-      color: #ffffff;
-      padding: 40px 5%;
-      text-align: center;
-      font-size: 0.85rem;
-    }
-
-    @media (max-width: 768px) {
-      .nav-container {
-        flex-direction: column;
-        gap: 15px;
-      }
+    @media (max-width: 900px) {
+      .brand-row, .brand-row.reverse { flex-direction: column; padding: 20px; gap: 25px; }
+      .brand-image { width: 100%; min-height: 260px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <div>📍 Sassari | 📞 Tel: 079398144</div>
-    <div>
-      <a href="#">IT</a> | <a href="#">EN</a>
-    </div>
-  </div>
-
-  <!-- Header / Navigation -->
   <header>
-    <div class="nav-container">
-      <a href="index.html" class="logo">SM CERAMICHE</a>
-      <a href="index.html" class="btn-back">&larr; Torna alla Home</a>
-    </div>
+    <a href="index.html" class="logo">SM CERAMICHE</a>
+    <a href="index.html" class="btn-back">&larr; Torna alla Home</a>
   </header>
 
-  <!-- Hero della Sottopagina -->
-  <section class="sub-hero">
-    <h1>Arredo Bagno & Soluzioni</h1>
-    <p>Esplora le collezioni complete di mobili componibili, lavabi d'arredo, sanitari e box doccia dei migliori marchi italiani.</p>
+  <section class="page-hero">
+    <h1>Arredo Bagno & Collezione Marchi</h1>
+    <p>Scopri i sistemi modularI, la ceramica d'autore e le finiture metalliche delle più rinomate aziende italiane selezionate per il nostro showroom.</p>
   </section>
 
-  <!-- Griglia Dettaglio Prodotti Arredo Bagno -->
-  <main class="product-grid">
+  <main class="collection-container">
 
-    <!-- Card 1: Mobili e Top in Gres -->
-    <div class="product-card">
-      <div class="card-img-wrapper">
-        <img src="bagno.jpg" alt="Mobili e Top in Gres">
-        <div class="badge-container">
-          <span class="badge">Top Gres Integrato</span>
-          <span class="badge">Mobili Componibili</span>
-        </div>
+    <!-- MARCHIO 1: BMT BAGNI -->
+    <div class="brand-row">
+      <div class="brand-image">
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=80" alt="BMT Bagni Collezione Ikona">
       </div>
-      <div class="product-info">
-        <h3>Mobili e Top in Gres</h3>
-        <p>Composizioni sospese, laccati opachi e top continui in gres porcellanato coordinato senza fessure.</p>
-        
-        <div class="brand-showroom-box">
-          <div class="brand-label">Marchi in Showroom:</div>
-          <div class="brand-tags">
-            <span class="brand-tag">BMT Bagni</span>
-            <span class="brand-tag">MobildueNne</span>
-            <span class="brand-tag">Kios</span>
-            <span class="brand-tag">Italgraniti</span>
-          </div>
+      <div class="brand-content">
+        <span class="brand-name">BMT Bagni — Collezione "Ikona" & "X-Fly"</span>
+        <h2 class="collection-title">Sistemi Componibili & Sospesi</h2>
+        <p class="collection-desc">Mobili lavabo d'alto design modulare caratterizzati da tagli a 45 gradi, aperture push-pull e cassettoni ad estrazione totale. Finiture in essenza legno naturale o laccature opache idrorepellenti.</p>
+        <div class="specs-list">
+          <span class="spec-item">Aperture Push-Pull / Gola</span>
+          <span class="spec-item">Laccati Opachi & Legno</span>
+          <span class="spec-item">Top Integrabili</span>
         </div>
-
-        <a href="index.html#prenota">Richiedi Preventivo &rarr;</a>
+        <div class="action-links">
+          <a href="index.html#prenota" class="btn-main">Prenota In Showroom</a>
+          <a href="https://www.bmtbagni.it/" target="_blank" rel="noopener" class="btn-catalog">Sfoglia Catalogo BMT &rarr;</a>
+        </div>
       </div>
     </div>
 
-    <!-- Card 2: Lavabi e Sanitari -->
-    <div class="product-card">
-      <div class="card-img-wrapper">
-        <img src="https://gsiceramica.it/wp-content/uploads/gsi/taxonomies/tipologia/lavabo-appoggio/gallery/884205.jpg" alt="Lavabi e Sanitari Design">
-        <div class="badge-container">
-          <span class="badge">Smalti Antibatterici</span>
-          <span class="badge">Design Sottile</span>
-        </div>
+    <!-- MARCHIO 2: ITALGRANITI LOOM -->
+    <div class="brand-row reverse">
+      <div class="brand-image">
+        <img src="https://www.italgranitigroup.com/templates/yootheme/cache/LOOM2026-2-c2d445ea.jpeg" alt="Italgraniti Loom Total Look">
       </div>
-      <div class="product-info">
-        <h3>Lavabi & Sanitari</h3>
-        <p>Lavabi da appoggio in ceramica ultrasottile e sanitari filo muro con sistemi di scarico avanzati.</p>
-        
-        <div class="brand-showroom-box">
-          <div class="brand-label">Marchi in Showroom:</div>
-          <div class="brand-tags">
-            <span class="brand-tag">GSI Sanitari</span>
-            <span class="brand-tag">Global Trade</span>
-          </div>
+      <div class="brand-content">
+        <span class="brand-name">Italgraniti — Collezione "Loom"</span>
+        <h2 class="collection-title">Total Look in Gres Porcellanato</h2>
+        <p class="collection-desc">Elementi d'arredo e lavabi monolite integrati realizzati con le medesime lastre in gres porcellanato dei rivestimenti. Zero fessure, massima igiene e continuita materica tra pavimento e arredo.</p>
+        <div class="specs-list">
+          <span class="spec-item">Monoliti in Gres</span>
+          <span class="spec-item">Superficie Continuativa</span>
+          <span class="spec-item">Resistente ai Graffi</span>
         </div>
-
-        <a href="index.html#prenota">Richiedi Preventivo &rarr;</a>
+        <div class="action-links">
+          <a href="index.html#prenota" class="btn-main">Prenota In Showroom</a>
+          <a href="https://www.italgranitigroup.com/it/italgraniti/arredo-bagno-italgraniti" target="_blank" rel="noopener" class="btn-catalog">Sfoglia Catalogo Loom &rarr;</a>
+        </div>
       </div>
     </div>
 
-    <!-- Card 3: Rubinetteria e Finiture -->
-    <div class="product-card">
-      <div class="card-img-wrapper">
-        <img src="https://www.rubinetteriashop.com/71510-large_default/kit-doccia-nero-opaco-completo-di-corpo-incasso-paini-venti-v2yo433tcd.jpg" alt="Rubinetteria e Finiture">
-        <div class="badge-container">
-          <span class="badge">Trattamento PVD</span>
-          <span class="badge">Nero Opaco / Bronzo</span>
-        </div>
+    <!-- MARCHIO 3: GSI SANITARI -->
+    <div class="brand-row">
+      <div class="brand-image">
+        <img src="https://gsiceramica.it/wp-content/uploads/gsi/taxonomies/tipologia/lavabo-appoggio/gallery/884205.jpg" alt="GSI Sanitari Kube X e Nube">
       </div>
-      <div class="product-info">
-        <h3>Rubinetteria & Accessori</h3>
-        <p>Miscelatori monocomando, soffioni doccia emozionali e set accessori in finiture di tendenza.</p>
-        
-        <div class="brand-showroom-box">
-          <div class="brand-label">Marchi in Showroom:</div>
-          <div class="brand-tags">
-            <span class="brand-tag">Paini</span>
-            <span class="brand-tag">Inda</span>
-          </div>
+      <div class="brand-content">
+        <span class="brand-name">GSI Ceramica — Collezione "Kube X" & "Kube"</span>
+        <h2 class="collection-title">Lavabi da Appoggio & Sanitari Extraglaze®</h2>
+        <p class="collection-desc">Sanitari sospesi e lavabi da appoggio in ceramica con bordi ultrasottili. Dotati di smalto antibatterico Extraglaze® e sistema di scarico silenzioso Swirlflush® per un'igiene senza pari.</p>
+        <div class="specs-list">
+          <span class="spec-item">Bordi Ultrasottili</span>
+          <span class="spec-item">Smalto Extraglaze®</span>
+          <span class="spec-item">Scarico Swirlflush®</span>
         </div>
-
-        <a href="index.html#prenota">Richiedi Preventivo &rarr;</a>
+        <div class="action-links">
+          <a href="index.html#prenota" class="btn-main">Prenota In Showroom</a>
+          <a href="https://gsiceramica.it/" target="_blank" rel="noopener" class="btn-catalog">Sfoglia Catalogo GSI &rarr;</a>
+        </div>
       </div>
     </div>
 
-    <!-- Card 4: Box Doccia & Wellness -->
-    <div class="product-card">
-      <div class="card-img-wrapper">
-        <img src="https://www.novellini.it/content/dam/novellini/prodotti/star20s/thumb/star20s-star-2-0-s-1.jpg/_jcr_content/renditions/cq5dam.web.460.460.jpeg" alt="Box Doccia e Wellness">
-        <div class="badge-container">
-          <span class="badge">Vetro Anticalcare</span>
-          <span class="badge">Su Misura</span>
+    <!-- MARCHIO 4: PAINI RUBINETTERIE -->
+    <div class="brand-row reverse">
+      <div class="brand-image">
+        <img src="https://www.rubinetteriashop.com/71510-large_default/kit-doccia-nero-opaco-completo-di-corpo-incasso-paini-venti-v2yo433tcd.jpg" alt="Paini Rubinetteria Venti e Cox">
+      </div>
+      <div class="brand-content">
+        <span class="brand-name">Paini Rubinetterie — Serie "Venti" & "Cox"</span>
+        <h2 class="collection-title">Rubinetteria & Finiture PVD</h2>
+        <p class="collection-desc">Miscelatori d'alta gamma con cartucce a risparmio idrico. Ampia disponibilità di finiture cromatiche avanzate: Nero Opaco, Bronzo Spazzolato, Rose Gold e Cromo Lucido ad alta resistenza.</p>
+        <div class="specs-list">
+          <span class="spec-item">Trattamento PVD</span>
+          <span class="spec-item">Nero Opaco / Bronzo</span>
+          <span class="spec-item">Eco-Aeratore Idrico</span>
+        </div>
+        <div class="action-links">
+          <a href="index.html#prenota" class="btn-main">Prenota In Showroom</a>
+          <a href="https://www.paini.com/" target="_blank" rel="noopener" class="btn-catalog">Sfoglia Catalogo Paini &rarr;</a>
         </div>
       </div>
-      <div class="product-info">
-        <h3>Box Doccia & Wellness</h3>
-        <p>Soluzioni doccia in cristallo temperato, piatti doccia ultrapiatti e specchi con illuminazione LED.</p>
-        
-        <div class="brand-showroom-box">
-          <div class="brand-label">Marchi in Showroom:</div>
-          <div class="brand-tags">
-            <span class="brand-tag">Novellini</span>
-            <span class="brand-tag">Inda</span>
-          </div>
-        </div>
+    </div>
 
-        <a href="index.html#prenota">Richiedi Preventivo &rarr;</a>
+    <!-- MARCHIO 5: NOVELLINI & KIOS -->
+    <div class="brand-row">
+      <div class="brand-image">
+        <img src="https://www.novellini.it/content/dam/novellini/prodotti/star20s/thumb/star20s-star-2-0-s-1.jpg/_jcr_content/renditions/cq5dam.web.460.460.jpeg" alt="Novellini Box Doccia Wellness">
+      </div>
+      <div class="brand-content">
+        <span class="brand-name">Novellini & Kios — Wellness & Specchi</span>
+        <h2 class="collection-title">Box Doccia, Cristalli & Specchi LED</h2>
+        <p class="collection-desc">Sistemi doccia su misura con vetro temperato di sicurezza e trattamento anticalcare Crystal Clear. Specchiere retroilluminate touch e accessori di design coordinati per la zona bath.</p>
+        <div class="specs-list">
+          <span class="spec-item">Vetro Anticalcare 8mm</span>
+          <span class="spec-item">Specchi Touch LED</span>
+          <span class="spec-item">Profili Anodizzati</span>
+        </div>
+        <div class="action-links">
+          <a href="index.html#prenota" class="btn-main">Prenota In Showroom</a>
+          <a href="https://www.novellini.it/" target="_blank" rel="noopener" class="btn-catalog">Sfoglia Catalogo Novellini &rarr;</a>
+        </div>
       </div>
     </div>
 
   </main>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; SM Ceramiche S.r.l. - Sassari. Tutti i diritti riservati.</p>
   </footer>
