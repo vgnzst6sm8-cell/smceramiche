@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arredo Bagno & Collezione Marchi - SM Ceramiche</title>
+  <title>Arredo Bagno & Proposte d'Arredo - SM Ceramiche Sassari</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,24 +23,27 @@
       line-height: 1.6;
     }
 
+    /* Header */
     header {
-      background: #ffffff;
-      padding: 20px 6%;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(8px);
+      padding: 18px 6%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid #E8E4DC;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
     }
 
     .logo {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: 700;
-      letter-spacing: 2px;
+      letter-spacing: 2.5px;
       color: #1A1A1A;
       text-decoration: none;
+      text-transform: uppercase;
     }
 
     .btn-back {
@@ -60,6 +63,7 @@
       color: #ffffff;
     }
 
+    /* Page Hero */
     .page-hero {
       padding: 70px 6% 40px;
       text-align: center;
@@ -82,105 +86,119 @@
       font-size: 1.05rem;
     }
 
-    .collection-container {
-      padding: 60px 6%;
-      max-width: 1300px;
+    /* --- LAYOUT GRIGLIA EDITORIALE (ISPIRATO ALLO SCREENSHOT TUSCANIA) --- */
+    .gallery-section {
+      padding: 80px 6%;
+      max-width: 1400px;
       margin: 0 auto;
     }
 
-    /* Layout Alternato (Zig-Zag): Immagine a un lato, Testo all'altro */
-    .brand-row {
-      display: flex;
-      gap: 50px;
-      align-items: center;
-      margin-bottom: 70px;
+    .editorial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+      align-items: start;
+    }
+
+    .editorial-card {
+      position: relative;
       background: #ffffff;
-      border-radius: 12px;
-      border: 1px solid #E8E4DC;
+      border-radius: 6px;
       overflow: hidden;
-      padding: 35px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
-    .brand-row.reverse {
-      flex-direction: row-reverse;
+    .editorial-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
     }
 
-    .brand-image {
-      flex: 1;
-      height: 380px;
-      border-radius: 8px;
+    /* Posizionamento sfalsato delle card verticali */
+    .editorial-card.offset-down {
+      margin-top: 50px;
+    }
+
+    .editorial-card.offset-up {
+      margin-top: -20px;
+    }
+
+    .card-img-wrapper {
+      position: relative;
+      width: 100%;
+      height: 480px;
       overflow: hidden;
     }
 
-    .brand-image img {
+    .card-img-wrapper img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.6s ease;
     }
 
-    .brand-content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    .editorial-card:hover .card-img-wrapper img {
+      transform: scale(1.05);
     }
 
-    .brand-name {
-      font-size: 0.8rem;
-      letter-spacing: 2px;
+    /* Etichetta Bianca Verticale laterale come nello screenshot */
+    .vertical-badge {
+      position: absolute;
+      right: 0;
+      bottom: 40px;
+      background: #ffffff;
+      color: #1A1A1A;
+      padding: 14px 18px;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      box-shadow: -4px 0 15px rgba(0,0,0,0.06);
+      z-index: 2;
+    }
+
+    .card-footer-info {
+      padding: 24px;
+      background: #ffffff;
+      border-top: 1px solid #F0ECE4;
+    }
+
+    .brand-sub {
+      font-size: 0.75rem;
       font-weight: 700;
       color: #A67C1E;
       text-transform: uppercase;
-      margin-bottom: 8px;
+      letter-spacing: 1.5px;
+      margin-bottom: 6px;
+      display: block;
     }
 
-    .collection-title {
-      font-size: 1.8rem;
-      font-weight: 400;
-      color: #1A1A1A;
-      margin-bottom: 14px;
-    }
-
-    .collection-desc {
-      color: #555;
-      font-size: 0.98rem;
-      margin-bottom: 20px;
-      line-height: 1.7;
-    }
-
-    .specs-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 30px;
-    }
-
-    .spec-item {
-      font-size: 0.8rem;
-      background: #FAF8F5;
-      border: 1px solid #E8E4DC;
-      padding: 6px 12px;
-      border-radius: 4px;
-      color: #444;
+    .card-title-text {
+      font-size: 1.25rem;
       font-weight: 500;
+      color: #1A1A1A;
+      margin-bottom: 10px;
     }
 
-    .action-links {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
+    .card-desc-text {
+      font-size: 0.88rem;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 18px;
     }
 
     .btn-catalog {
       display: inline-block;
+      width: 100%;
+      text-align: center;
       background: #1A1A1A;
       color: #ffffff;
-      border: 1px solid #1A1A1A;
-      padding: 12px 24px;
+      padding: 11px 20px;
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 600;
       border-radius: 4px;
       text-transform: uppercase;
@@ -190,27 +208,34 @@
 
     .btn-catalog:hover {
       background: #A67C1E;
-      border-color: #A67C1E;
-      color: #ffffff;
     }
 
+    /* Footer */
     footer {
       background: #1A1A1A;
       color: #ffffff;
       text-align: center;
-      padding: 30px 6%;
+      padding: 35px 6%;
       font-size: 0.85rem;
+      margin-top: 60px;
     }
 
-    @media (max-width: 900px) {
-      .brand-row, .brand-row.reverse {
-        flex-direction: column;
-        padding: 20px;
-        gap: 25px;
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .editorial-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
-      .brand-image {
-        width: 100%;
-        height: 260px;
+      .editorial-card.offset-down, .editorial-card.offset-up {
+        margin-top: 0;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .editorial-grid {
+        grid-template-columns: 1fr;
+      }
+      .card-img-wrapper {
+        height: 380px;
       }
     }
   </style>
@@ -223,92 +248,85 @@
   </header>
 
   <section class="page-hero">
-    <h1>Arredo Bagno & Collezione Marchi</h1>
-    <p>Sistemi modulari, ceramica d'autore e finiture metalliche d'eccellenza selezionati dai principali produttori italiani per il nostro showroom.</p>
+    <h1>Arredo Bagno & Proposte d'Arredo</h1>
+    <p>Composizioni su misura, modularità d'autore e finiture materiche selezionate dai migliori produttori italiani per il nostro showroom di Sassari.</p>
   </section>
 
-  <main class="collection-container">
+  <!-- GRIGLIA EDITORIALE ATELIER -->
+  <main class="gallery-section">
+    <div class="editorial-grid">
 
-    <!-- MARCHIO 1: BMT BAGNI -->
-    <div class="brand-row">
-      <div class="brand-image">
-        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80" alt="BMT Bagni Mobili Sospesi">
-      </div>
-      <div class="brand-content">
-        <span class="brand-name">BMT Bagni — Collezione "Ikona" & "Moon"</span>
-        <h2 class="collection-title">Mobili Componibili & Sospesi</h2>
-        <p class="collection-desc">Mobili lavabo dal design modulare caratterizzati da tagli a 45 gradi, aperture push-pull e cassettoni ad estrazione totale. Finiture in essenza legno naturale o laccature opache idrorepellenti.</p>
-        <div class="specs-list">
-          <span class="spec-item">Aperture Push-Pull</span>
-          <span class="spec-item">Laccati Opachi & Legno</span>
-          <span class="spec-item">Design Sospeso</span>
+      <!-- CARD 1: MARMO & AMBIENTE BAGNO -->
+      <div class="editorial-card">
+        <div class="card-img-wrapper">
+          <img src="marmo.jpg" alt="Effetto Marmo Arredo Bagno" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80'">
+          <div class="vertical-badge">Effetto Marmo</div>
         </div>
-        <div class="action-links">
-          <a href="https://www.bmtbagni.it/" target="_blank" rel="noopener" class="btn-catalog">Sfoglia Catalogo Ufficiale BMT &rarr;</a>
+        <div class="card-footer-info">
+          <span class="brand-sub">Italgraniti Group</span>
+          <h2 class="card-title-text">Loom Total Look in Gres</h2>
+          <p class="card-desc-text">Elementi d'arredo e lavabi monolite integrati realizzati con le medesime lastre in gres porcellanato dei rivestimenti.</p>
+          <a href="https://www.italgranitigroup.com/it/italgraniti/arredo-bagno-italgraniti" target="_blank" rel="noopener" class="btn-catalog">Sfoglia Catalogo Loom &rarr;</a>
         </div>
       </div>
+
+      <!-- CARD 2: MOBILI SOSPESI (SFALSATA IN BASSO) -->
+      <div class="editorial-card offset-down">
+        <div class="card-img-wrapper">
+          <img src="bagno.jpg" alt="BMT Mobili Bagno Sospesi" onerror="this.src='https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=80'">
+          <div class="vertical-badge">Mobili Sospesi</div>
+        </div>
+        <div class="card-footer-info">
+          <span class="brand-sub">BMT Bagni</span>
+          <h2 class="card-title-text">Collezioni Ikona & Moon</h2>
+          <p class="card-desc-text">Mobili lavabo modulari con tagli a 45°, aperture push-pull e cassettoni ad estrazione totale in essenza legno o laccati.</p>
+          <a href="https://bmtbagni.it" target="_blank" rel="noopener" class="btn-catalog">Sfoglia Catalogo BMT &rarr;</a>
+        </div>
+      </div>
+
+      <!-- CARD 3: DECORO & SANITARI D'AUTORE -->
+      <div class="editorial-card">
+        <div class="card-img-wrapper">
+          <img src="sedimenta.jpeg" alt="GSI Ceramica Kube X ed Effetto Decoro" onerror="this.src='https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1000&q=80'">
+          <div class="vertical-badge">Effetto Decoro</div>
+        </div>
+        <div class="card-footer-info">
+          <span class="brand-sub">GSI Ceramica</span>
+          <h2 class="card-title-text">Sanitari & Lavabi Extraglaze®</h2>
+          <p class="card-desc-text">Lavabi da appoggio con bordi ultrasottili e sanitari sospesi antibatterici Extraglaze® dotati di scarico Swirlflush®.</p>
+          <a href="https://www.gsisanitari.it" target="_blank" rel="noopener" class="btn-catalog">Sfoglia Catalogo GSI &rarr;</a>
+        </div>
+      </div>
+
+      <!-- CARD 4: RUBINETTERIA & FINITURE (SFALSATA) -->
+      <div class="editorial-card offset-up">
+        <div class="card-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=80" alt="Paini Rubinetterie PVD e Nero Opaco">
+          <div class="vertical-badge">Finiture PVD</div>
+        </div>
+        <div class="card-footer-info">
+          <span class="brand-sub">Paini Rubinetterie</span>
+          <h2 class="card-title-text">Serie Venti & Cox</h2>
+          <p class="card-desc-text">Miscelatori e sistemi doccia ad incasso nelle finiture Nero Opaco, Bronzo Spazzolato, Rose Gold e Cromo Lucido.</p>
+          <a href="https://www.paini.it" target="_blank" rel="noopener" class="btn-catalog">Sfoglia Catalogo Paini &rarr;</a>
+        </div>
+      </div>
+
+      <!-- CARD 5: PIETRA & WELLNESS -->
+      <div class="editorial-card">
+        <div class="card-img-wrapper">
+          <img src="alpen.jpeg" alt="Tuscania Effetto Pietra Wellness" onerror="this.src='https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1000&q=80'">
+          <div class="vertical-badge">Effetto Pietra</div>
+        </div>
+        <div class="card-footer-info">
+          <span class="brand-sub">Tuscania Ceramiche</span>
+          <h2 class="card-title-text">Area Wellness & Docce</h2>
+          <p class="card-desc-text">Rivestimenti naturali e superfici antiscivolo che trasformano il bagno di casa in una vera e propria spa privata.</p>
+          <a href="https://tuscaniagres.it" target="_blank" rel="noopener" class="btn-catalog">Sfoglia Catalogo Tuscania &rarr;</a>
+        </div>
+      </div>
+
     </div>
-
-    <!-- MARCHIO 2: ITALGRANITI LOOM -->
-    <div class="brand-row reverse">
-      <div class="brand-image">
-        <img src="https://www.italgranitigroup.com/templates/yootheme/cache/LOOM2026-2-1571154b.jpeg" alt="Italgraniti Loom Total Look">
-      </div>
-      <div class="brand-content">
-        <span class="brand-name">Italgraniti — Collezione "Loom"</span>
-        <h2 class="collection-title">Total Look in Gres Porcellanato</h2>
-        <p class="collection-desc">Elementi d'arredo e lavabi monolite integrati realizzati con le medesime lastre in gres porcellanato dei rivestimenti. Zero fessure, massima igiene e continuità materica tra pavimento e arredo.</p>
-        <div class="specs-list">
-          <span class="spec-item">Monoliti in Gres</span>
-          <span class="spec-item">Superficie Continuativa</span>
-          <span class="spec-item">Resistente ai Graffi</span>
-        </div>
-        <div class="action-links">
-          <a href="https://www.italgranitigroup.com/it/italgraniti/arredo-bagno-italgraniti" target="_blank" rel="noopener" class="btn-catalog">Sfoglia Catalogo Ufficiale Italgraniti &rarr;</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- MARCHIO 3: GSI SANITARI -->
-    <div class="brand-row">
-      <div class="brand-image">
-        <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1200&q=80" alt="GSI Ceramica Lavabi e Sanitari">
-      </div>
-      <div class="brand-content">
-        <span class="brand-name">GSI Ceramica — Collezione "Kube X"</span>
-        <h2 class="collection-title">Lavabi da Appoggio & Sanitari Extraglaze®</h2>
-        <p class="collection-desc">Sanitari sospesi e lavabi da appoggio in ceramica con bordi ultrasottili. Dotati di smalto antibatterico Extraglaze® e sistema di scarico silenzioso Swirlflush® per un'igiene senza pari.</p>
-        <div class="specs-list">
-          <span class="spec-item">Bordi Ultrasottili</span>
-          <span class="spec-item">Smalto Extraglaze®</span>
-          <span class="spec-item">Scarico Swirlflush®</span>
-        </div>
-        <div class="action-links">
-          <a href="https://gsiceramica.it/" target="_blank" rel="noopener" class="btn-catalog">Sfoglia Catalogo Ufficiale GSI &rarr;</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- MARCHIO 4: PAINI RUBINETTERIE -->
-    <div class="brand-row reverse">
-      <div class="brand-image">
-        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80" alt="Paini Rubinetteria Design Moderno">
-      </div>
-      <div class="brand-content">
-        <span class="brand-name">Paini Rubinetterie — Serie "Venti" & "Cox"</span>
-        <h2 class="collection-title">Rubinetteria & Finiture PVD</h2>
-        <p class="collection-desc">Miscelatori d'alta gamma con cartucce a risparmio idrico. Ampia disponibilità di finiture cromatiche avanzate: Nero Opaco, Bronzo Spazzolato, Rose Gold e Cromo Lucido ad alta resistenza.</p>
-        <div class="specs-list">
-          <span class="spec-item">Trattamento PVD</span>
-          <span class="spec-item">Nero Opaco / Bronzo</span>
-          <span class="spec-item">Eco-Aeratore Idrico</span>
-        </div>
-        <div class="action-links">
-          <a href="https://www.paini.com/" target="_blank" rel="noopener" class="btn-catalog">Sfoglia Catalogo Ufficiale Paini &rarr;</a>
-        </div>
-      </div>
-    </div>
-
   </main>
 
   <footer>
