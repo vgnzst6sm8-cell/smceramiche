@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rivestimenti Bagno & Grandi Lastre - SM Ceramiche Sassari</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background-color: #faf8f5; color: #1a1a1a; line-height: 1.6; }
+
+    header { position: sticky; top: 0; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(8px); border-bottom: 1px solid #e8e4dc; z-index: 1000; }
+    .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 18px 6%; }
+    .logo { font-size: 1.4rem; font-weight: 700; letter-spacing: 2.5px; color: #1a1a1a; text-decoration: none; text-transform: uppercase; }
+    .btn-back { text-decoration: none; color: #1a1a1a; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; padding: 8px 18px; border: 1px solid #1a1a1a; border-radius: 4px; transition: 0.3s; }
+    .btn-back:hover { background: #1a1a1a; color: #fff; }
+
+    /* Hero Section con Hotspot */
+    .hotspot-hero { background-color: #9e8d7c; color: #ffffff; padding: 70px 6%; }
+    .hotspot-grid { max-width: 1300px; margin: 0 auto; display: flex; gap: 50px; align-items: center; }
+    .hotspot-text { flex: 1; max-width: 460px; }
+    .hotspot-title { font-size: 2.6rem; font-weight: 300; margin-bottom: 20px; font-family: Georgia, serif; text-transform: uppercase; letter-spacing: 1px; }
+    .hotspot-desc { font-size: 0.98rem; line-height: 1.8; color: rgba(255, 255, 255, 0.92); margin-bottom: 30px; font-weight: 300; }
+    .hotspot-btn { display: inline-block; padding: 10px 28px; border: 1px solid rgba(255, 255, 255, 0.8); border-radius: 30px; color: #ffffff; text-decoration: none; font-size: 0.82rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
+    .hotspot-btn:hover { background: #ffffff; color: #1a1a1a; }
+
+    .hotspot-image-wrapper { flex: 1.3; position: relative; border-radius: 8px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.18); }
+    .hotspot-image-wrapper img { width: 100%; height: 420px; object-fit: cover; display: block; }
+    
+    .hotspot-point { position: absolute; width: 34px; height: 34px; background: rgba(255, 255, 255, 0.92); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25); transition: 0.3s; }
+    .hotspot-point:hover { transform: scale(1.15); background: #ffffff; }
+    .hotspot-point span { color: #1a1a1a; font-weight: 700; font-size: 1.1rem; }
+    .hotspot-tooltip { position: absolute; bottom: 44px; left: 50%; transform: translateX(-50%); background: #1a1a1a; color: #ffffff; padding: 10px 14px; border-radius: 6px; white-space: nowrap; font-size: 0.78rem; opacity: 0; pointer-events: none; transition: 0.3s; z-index: 10; }
+    .hotspot-point:hover .hotspot-tooltip { opacity: 1; transform: translateX(-50%) translateY(-5px); }
+
+    /* Showcase Collezioni */
+    .collections-section { padding: 90px 6%; max-width: 1300px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-header h2 { font-size: 2.2rem; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; color: #1a1a1a; margin-bottom: 10px; }
+    .section-header p { color: #666; font-size: 1rem; }
+
+    .floor-row { display: flex; gap: 40px; align-items: center; margin-bottom: 70px; background: #ffffff; border: 1px solid #e8e4dc; border-radius: 10px; padding: 35px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+    .floor-row.reverse { flex-direction: row-reverse; }
+    .floor-img { flex: 1.1; height: 360px; border-radius: 6px; overflow: hidden; }
+    .floor-img img { width: 100%; height: 100%; object-fit: cover; }
+    .floor-info { flex: 1; }
+    .brand-badge { font-size: 0.75rem; font-weight: 700; color: #a67c1e; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; display: block; }
+    .floor-title { font-size: 1.7rem; font-weight: 400; color: #1a1a1a; margin-bottom: 12px; }
+    .floor-desc { color: #555; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.6; }
+    .floor-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 25px; }
+    .floor-tag { font-size: 0.75rem; background: #faf8f5; border: 1px solid #e8e4dc; padding: 5px 10px; border-radius: 4px; color: #444; font-weight: 600; text-transform: uppercase; }
+    .btn-catalog { display: inline-block; background: #1a1a1a; color: #ffffff; padding: 12px 24px; text-decoration: none; font-size: 0.82rem; font-weight: 600; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+    .btn-catalog:hover { background: #a67c1e; }
+
+    footer { background: #1a1a1a; color: #ffffff; text-align: center; padding: 35px 6%; font-size: 0.85rem; }
+
+    @media (max-width: 900px) {
+      .hotspot-grid, .floor-row, .floor-row.reverse { flex-direction: column; gap: 30px; padding: 20px; }
+      .hotspot-image-wrapper img { height: 280px; }
+      .floor-img { width: 100%; height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">SM CERAMICHE</a>
+      <a href="index.html" class="btn-back">&larr; Torna alla Home</a>
+    </div>
+  </header>
+
+  <!-- Hero Section Hotspot -->
+  <section class="hotspot-hero">
+    <div class="hotspot-grid">
+      <div class="hotspot-text">
+        <h1 class="hotspot-title">Rivestimenti Bagno</h1>
+        <p class="hotspot-desc">
+          Grandi lastre in gres porcellanato, texture tridimensionali e motivi decorativi floreali. Trasforma le pareti del tuo bagno in vere e proprie quinte scenografiche Made in Italy.
+        </p>
+        <a href="index.html#prenota" class="hotspot-btn">Richiedi Preventivo</a>
+      </div>
+      <div class="hotspot-image-wrapper">
+        <img src="marmo.jpg" alt="Rivestimenti Bagno Marmo" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80'">
+        
+        <div class="hotspot-point" style="top: 35%; left: 55%;">
+          <span>+</span>
+          <div class="hotspot-tooltip">
+            <strong>Effetto Marmo Continuo</strong>
+            <p>Grandi lastre a vena continua</p>
+          </div>
+        </div>
+
+        <div class="hotspot-point" style="top: 65%; left: 30%;">
+          <span>+</span>
+          <div class="hotspot-tooltip">
+            <strong>Trattamento Antibatterico</strong>
+            <p>Superficie igienica e senza fughe visibili</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase Tipologie Rivestimenti -->
+  <main class="collections-section">
+    <div class="section-header">
+      <h2>Collezioni Rivestimenti D'Autore</h2>
+      <p>Superfici ceramiche d'alta gamma selezionate dai nostri produttori partner</p>
+    </div>
+
+    <!-- 1. Effetto Marmo Statuario -->
+    <div class="floor-row">
+      <div class="floor-img">
+        <img src="marmo.jpg" alt="Italgraniti Marmo Statuario" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80'">
+      </div>
+      <div class="floor-info">
+        <span class="brand-badge">Italgraniti Group</span>
+        <h3 class="floor-title">Grandi Lastre Effetto Marmo</h3>
+        <p class="floor-desc">Rivestimenti scenografici d'ispirazione marmo Statuario e Calacatta con finitura lucida a specchio o satinata naturale. Ideali per box doccia a nicchia e pareti d'impatto.</p>
+        <div class="floor-tags">
+          <span class="floor-tag">Formato 120x280cm</span>
+          <span class="floor-tag">Spessore Sottile 6mm</span>
+          <span class="floor-tag">Vena Continua</span>
+        </div>
+        <a href="https://www.italgranitigroup.com" target="_blank" rel="noopener" class="btn-catalog">Sfoglia Catalogo Italgraniti &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 2. Wallpaper & Decorativi Botanici -->
+    <div class="floor-row reverse">
+      <div class="floor-img">
+        <img src="sedimenta.jpeg" alt="Marca Corona Decorativi Botanici" onerror="this.src='https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=80'">
+      </div>
+      <div class="floor-info">
+        <span class="brand-badge">Marca Corona & Naxos</span>
+        <h3 class="floor-title">Carta da Parati Ceramica & Motif Botanici</h3>
+        <p class="floor-desc">Pannelli decorativi in ceramica inassorbenti e resistenti all'acqua con stampe botaniche, jungle e trame geometriche per dare vita e colore alla zona lavabo e doccia.</p>
+        <div class="floor-tags">
+          <span class="floor-tag">Resistente all'Acqua</span>
+          <span class="floor-tag">Effetto Wallpaper</span>
+        </div>
+        <a href="https://www.marcacorona.it" target="_blank" rel="noopener" class="btn-catalog">Sfoglia Catalogo Marca Corona &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 3. Strutture Tridimensionali 3D -->
+    <div class="floor-row">
+      <div class="floor-img">
+        <img src="alpen.jpeg" alt="Tuscania Strutture 3D" onerror="this.src='https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1000&q=80'">
+      </div>
+      <div class="floor-info">
+        <span class="brand-badge">Tuscania Ceramiche</span>
+        <h3 class="floor-title">Superfici 3D & Relief Textured</h3>
+        <p class="floor-desc">Rivestimenti a rilievo dinamico che creano suggestivi giochi di luce e ombra sulle pareti della zona wellness, unendo la matericità della pietra naturale alla praticità ceramica.</p>
+        <div class="floor-tags">
+          <span class="floor-tag">Struttura Tridimensionale</span>
+          <span class="floor-tag">Giochi di Luce</span>
+        </div>
+        <a href="https://tuscaniagres.it" target="_blank" rel="noopener" class="btn-catalog">Sfoglia Catalogo Tuscania &rarr;</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; SM Ceramiche S.r.l. - Sassari. Tutti i diritti riservati.</p>
+  </footer>
+
+</body>
+</html>
